@@ -7,3 +7,8 @@ form.addEventListener("submit", function (event) {
   event.preventDefault();
   salvarItem();
 });
+
+function salvarItem() {
+  const itemCompras = inputForm.value;
+  listaDeCompras.push({ valor: itemCompras });
+}
