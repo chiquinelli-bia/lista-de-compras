@@ -1,12 +1,12 @@
-#Projeto Lista de Compras - Utilizado no Curso Objetos no JavaScript - Escola Front-End Alura
+# Projeto Lista de Compras - Utilizado no Curso Objetos no JavaScript - Escola Front-End Alura
 
-Neste arquivo encontram-se modelos de códigos que serão utilizados no decorrer do curso. 
+Neste arquivo encontram-se modelos de códigos que serão utilizados no decorrer do curso.
 
 Código modelo da li "Comprados":
 
     <li class="item-compra is-flex is-justify-content-space-between" data-value="">
         <div>
-            <input type="checkbox" checked class="is-clickable" />  
+            <input type="checkbox" checked class="is-clickable" />
             <span class="itens-comprados is-size-5"></span>
         </div>
         <div>
@@ -14,7 +14,7 @@ Código modelo da li "Comprados":
         </div>
     </li>
 
-Código modelo da li "Lista de compras": 
+Código modelo da li "Lista de compras":
 
     <li class="item-compra is-flex is-justify-content-space-between" data-value="">
         <div>
@@ -29,7 +29,7 @@ Código modelo da li "Lista de compras":
 Input com código refatorado:
 
     <div>
-        <input type="checkbox" checked class="is-clickable" />  
+        <input type="checkbox" checked class="is-clickable" />
         <span class="itens-comprados is-size-5">${elemento.valor}</span>
     </div>
 
