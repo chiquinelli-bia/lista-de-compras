@@ -18,7 +18,7 @@ function salvarItem() {
   if (checarDuplicado) {
     alert("item já existe na lista de compra");
   } else {
-    listaDeCompras.push({ valor: itemCompras });
+    listaDeCompras.push({ valor: itemCompras, check: false });
   }
 }
 function mostrarItens() {
@@ -33,5 +33,14 @@ function mostrarItens() {
             <i class="fa-solid fa-trash is-clickable deletar"></i>
         </div>
     </li>`;
+  });
+  const itensCheck = document.querySelectorAll('input[type="checkbox"]');
+  itensCheck.forEach((i) => {
+    i.addEventListener("click", (evento) => {
+      const indiceDoElemento =
+        evento.target.parentElement.parentElement.getAttribute("data-value");
+      listaDeCompras[indiceDoElemento].check = evento.target.checked;
+      console.log(listaDeCompras[indiceDoElemento].check);
+    });
   });
 }
