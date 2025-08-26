@@ -56,7 +56,15 @@ function mostrarItens() {
       const indiceDoElemento =
         evento.target.parentElement.parentElement.getAttribute("data-value");
       listaDeCompras[indiceDoElemento].check = evento.target.checked;
-      console.log(listaDeCompras[indiceDoElemento].check);
+      mostrarItens();
+    });
+  });
+  const deletarItem = document.querySelectorAll(".deletar");
+  deletarItem.forEach((i) => {
+    i.addEventListener("click", (evento) => {
+      const indiceDoElemento =
+        evento.target.parentElement.parentElement.getAttribute("data-value");
+      listaDeCompras.splice(indiceDoElemento, 1);
       mostrarItens();
     });
   });
