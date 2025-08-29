@@ -5,9 +5,16 @@ const form = document.getElementById("form-itens");
 const inputForm = document.getElementById("receber-item");
 const ulLista = document.getElementById("lista-de-itens");
 const ulListaComprados = document.getElementById("itens-comprados");
+const listaTratada = localStorage.getItem("listaDeCompras");
 
 function atualizarLocalStorage() {
   localStorage.setItem("listaDeCompras", JSON.stringify(listaDeCompras));
+}
+if (listaTratada) {
+  listaDeCompras = JSON.parse(listaTratada);
+  mostrarItens();
+} else {
+  listaDeCompras = [];
 }
 
 form.addEventListener("submit", function (event) {
