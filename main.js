@@ -1,9 +1,14 @@
 let listaDeCompras = [];
+let itemAEditar;
 
 const form = document.getElementById("form-itens");
 const inputForm = document.getElementById("receber-item");
 const ulLista = document.getElementById("lista-de-itens");
 const ulListaComprados = document.getElementById("itens-comprados");
+
+function atualizarLocalStorage() {
+  localStorage.setItem("listaDeCompras", JSON.stringify(listaDeCompras));
+}
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -42,9 +47,16 @@ function mostrarItens() {
       ulLista.innerHTML += `<li class="item-compra is-flex is-justify-content-space-between" data-value="${index}">
           <div>
               <input type="checkbox" class="is-clickable" />
-              <input type="text" class="is-size-5" value="${item.valor}"></input>
+              <input type="text" class="is-size-5" value="${item.valor}" ${
+        index !== Number(itemAEditar) ? "disabled" : ""
+      }></input>
           </div>
           <div>
+              ${
+                index === Number(itemAEditar)
+                  ? '<button onclick="salvarEdicao()"><i class="fa-regular fa-floppy-disk is-clickable"></i></button>'
+                  : '<i class="fa-regular is-clickable fa-pen-to-square editar"></i>'
+              }
               <i class="fa-solid fa-trash is-clickable deletar"></i>
           </div>
       </li>`;
@@ -68,4 +80,22 @@ function mostrarItens() {
       mostrarItens();
     });
   });
+  const editarItem = document.querySelectorAll(".editar");
+  editarItem.forEach((i) => {
+    i.addEventListener("click", (evento) => {
+      itemAEditar =
+        evento.target.parentElement.parentElement.getAttribute("data-value");
+      mostrarItens();
+      console.log(itemAEditar);
+    });
+  });
+  atualizarLocalStorage();
+}
+function salvarEdicao() {
+  const itemEditado = document.querySelector(
+    `[data-value="${itemAEditar}"] input[type="text"]`
+  );
+  listaDeCompras[itemAEditar].valor = itemEditado.value;
+  itemAEditar = -1;
+  mostrarItens();
 }
