@@ -12,7 +12,7 @@ Projeto realizado durante o curso "JavaScript: manipulando objetos" com o instru
 
 - **Desenvolvimento de funcionalidades em JavaScript,** como funções de salvar, deletar, editar, renderizar e mover o item de lista de acordo com o estado do checkbox
 
-![Demonstração da lista de compras: o usuário adiciona os itens "arroz" e "feijão", edita "feijão" para "macarrão" e salva a alteração. Em seguida, marca "feijão" como comprado, movendo-o para a lista de "Comprados". Depois exclui "macarrão". Ao recarregar a página, os itens permanecem salvos.](https://imgur.com/a/0y7TvGK)
+![Demonstração da lista de compras: o usuário adiciona os itens "arroz" e "feijão", edita "feijão" para "macarrão" e salva a alteração. Em seguida, marca "feijão" como comprado, movendo-o para a lista de "Comprados". Depois exclui "macarrão". Ao recarregar a página, os itens permanecem salvos.](https://imgur.com/a/demonstra-o-da-lista-de-compras-0y7TvGK)
 
 ## Tecnologias Utilizadas
 
